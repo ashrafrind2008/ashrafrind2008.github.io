@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ashraf Baloch Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+
+    body.light {
+      background: #f5f5f5;
+      color: #111111;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: gold;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
+
+    #modeBtn {
+      background: black;
+      color: gold;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    body.light #modeBtn {
+      background: white;
+      color: black;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #aaa;
+      margin-bottom: 5px;
+    }
+
+    body.light .hero p {
+      color: #555;
+    }
+
+    /* SKILLS */
+    .section {
+      padding: 30px 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: gold;
+      font-size: 26px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid gold;
+      padding-bottom: 8px;
+    }
+
+    .skill-item {
+      background: #1a1a1a;
+      border: 1px solid gold;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 12px;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    body.light .skill-item {
+      background: #fff;
+      color: #111;
+    }
+
+    .badge {
+      background: gold;
+      color: black;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* PROJECTS */
+    .project-card {
+      background: #1a1a1a;
+      border: 1px solid gold;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+    body.light .project-card {
+      background: #fff;
+      color: #111;
+    }
+
+    .project-card h3 {
+      color: gold;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .project-card p {
+      color: #aaa;
+      font-size: 15px;
+    }
+
+    body.light .project-card p {
+      color: #555;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #555;
+      font-size: 14px;
+      border-top: 1px solid #333;
+      margin-top: 20px;
+    }
+
+    body.light footer {
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body id="page">
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">⚡ Ashraf Baloch</div>
+    <button id="modeBtn" onclick="toggleMode()">☀️ Light</button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Ashraf Baloch</h1>
+    <p>Web Developer | Content Creator</p>
+    <p>📍 Pakistan</p>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <h2>My Skills</h2>
+
+    <div class="skill-item">
+      HTML <span class="badge">✅ Done</span>
+    </div>
+    <div class="skill-item">
+      CSS <span class="badge">✅ Done</span>
+    </div>
+    <div class="skill-item">
+      JavaScript <span class="badge">🔥 Learning</span>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <h2>My Projects</h2>
+
+    <div class="project-card">
+      <h3>🧮 Calculator</h3>
+      <p>HTML + CSS + JavaScript se banaya gaya calculator</p>
+    </div>
+
+    <div class="project-card">
+      <h3>🌙 Dark/Light Mode</h3>
+      <p>Auto toggle dark aur light mode portfolio</p>
+    </div>
+
+    <div class="project-card">
+      <h3>🌐 Portfolio Website</h3>
+      <p>Apna personal portfolio page with navbar</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Ashraf Baloch -- Web Developer
+  </footer>
+
+  <script>
+    // Auto Dark/Light based on time
+    let hour = new Date().getHours();
+    if(hour >= 6 && hour < 18) {
+      document.getElementById('page').classList.add('light');
+      document.getElementById('modeBtn').innerText = '🌙 Dark';
+    }
+
+    function toggleMode() {
+      let body = document.getElementById('page');
+      let btn = document.getElementById('modeBtn');
+      body.classList.toggle('light');
+      btn.innerText = body.classList.contains('light') ? '🌙 Dark' : '☀️ Light';
+    }
+  </script>
+
+</body>
+            </html>
